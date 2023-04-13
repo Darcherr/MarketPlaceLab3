@@ -43,49 +43,55 @@
             </div>
         </nav>
     </section>
-    <div id="listado-productos">
-        <div class="preview-producto">
-            <a href="Monitor-samsung.html">
-                <img class="card-img-top"
-                    src="https://images.samsung.com/is/image/samsung/p6pim/ar/lf24t350fhlczb/gallery/ar-t35f-388813-lf24t350fhlczb-456992025?$650_519_PNG$"
-                    alt="Card image cap">
-            </a>
-            <p>Monitor gamer Samsung F24T35 led 24" azul y gris oscuro 100V/240V</p>
-            <!-- <div class="card">
-                <a href="Monitor-samsung.html">
-                    <img src="https://images.samsung.com/is/image/samsung/p6pim/ar/lf24t350fhlczb/gallery/ar-t35f-388813-lf24t350fhlczb-456992025?$650_519_PNG$"
-                        class="card-img-top" alt="Monitor samsung">
-                    <div class="card-body">
-                        <h5 class="card-title" style="color: black;">Monitor gamer Samsung F24T35 led 24" azul y gris
-                            oscuro 100V/240V</h5>
-                        <p class="card-text" style="color: black;">Some quick example text to build on the card title
-                            and make up the bulk of
-                            the
-                            card's content.</p>
-                </a>
-            </div> -->
-        </div>
-        <div class="preview-producto">
-            <a href="Memoria-RAM.html">
-                <img class="card-img-top" src="https://http2.mlstatic.com/D_NQ_NP_612752-MLA48636149729_122021-O.webp"
-                    alt="Memoria ram 8gb">
-            </a>
-            <p>Memoria RAM Fury Beast DDR4 gamer color negro 8GB 1 Kingston KF432C16BB/8</p>
-        </div>
-        <div class="preview-producto">
-            <a href="PS5.HTML">
-                <img class="card-img-top" src="https://http2.mlstatic.com/D_NQ_NP_739160-MLA44484414453_012021-O.webp"
-                    alt="imagen de playstation 5">
-            </a>
-            <p>Sony PlayStation 5 825GB Standard color blanco y negro</p>
-        </div>
-    </div>
-    </div>
+    <div id="listado-productos"></div>
     <footer class="fixed-bottom">
         <div>
             <p>Sin derechos de autor</p>
         </div>
     </footer>
+    <script>
+        const productos = [
+            {
+                nombre: "Monitor gamer Samsung F24T35 led 24\" azul y gris oscuro 100V/240V",
+                imagen: "https://images.samsung.com/is/image/samsung/p6pim/ar/lf24t350fhlczb/gallery/ar-t35f-388813-lf24t350fhlczb-456992025?$650_519_PNG$",
+                link: "Monitor-samsung.html"
+            },
+            {
+                nombre: "Memoria RAM Fury Beast DDR4 gamer color negro 8GB 1 Kingston KF432C16BB/8",
+                imagen: "https://http2.mlstatic.com/D_NQ_NP_612752-MLA48636149729_122021-O.webp",
+                link: "Memoria-RAM.html"
+            },
+            {
+                nombre: "Sony PlayStation 5 825GB Standard color blanco y negro",
+                imagen: "https://http2.mlstatic.com/D_NQ_NP_739160-MLA44484414453_012021-O.webp",
+                link: "PS5.HTML"
+            }
+        ];
+
+        const contenedor = document.getElementById("listado-productos");
+
+        for (const producto of productos) {
+            const previewProducto = document.createElement("div");
+            previewProducto.classList.add("preview-producto");
+
+            const linkProducto = document.createElement("a");
+            linkProducto.href = producto.link;
+
+            const imagenProducto = document.createElement("img");
+            imagenProducto.classList.add("card-img-top");
+            imagenProducto.src = producto.imagen;
+            imagenProducto.alt = "Imagen de " + producto.nombre;
+
+            linkProducto.appendChild(imagenProducto);
+            previewProducto.appendChild(linkProducto);
+
+            const nombreProducto = document.createElement("p");
+            nombreProducto.textContent = producto.nombre;
+            previewProducto.appendChild(nombreProducto);
+
+            contenedor.appendChild(previewProducto);
+        }
+    </script>
 </body>
 
 </html>

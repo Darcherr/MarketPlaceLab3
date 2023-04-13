@@ -3,21 +3,22 @@
 } */
 #listado-productos {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));
     grid-template-rows: auto auto;
-    /* height: 500px;
-    margin: 100px; */
+    grid-gap: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
-img {
-    max-height: 100%;
-
-}
+.preview-producto img {
+    max-width: 100%;
+    height: auto;
+  }
 
 .preview-producto {
-    margin: 20px;
-    height: 450px;
-    border: solid 1px black;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
 }
 /* .card{
     max-height: 100%;
